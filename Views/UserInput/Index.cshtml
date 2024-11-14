@@ -1,0 +1,36 @@
+@model NameFormMVCApp.Models.UserInput
+@{
+    ViewData["Title"] = "User Form";
+}
+
+<h2>Enter Details</h2>
+
+<form asp-action="Index" method="post">
+    <label>First Name:</label>
+    <input asp-for="FirstName" /><br />
+    <span asp-validation-for="FirstName" class="text-danger"></span><br />
+
+    <label>Middle Name:</label>
+    <input asp-for="MiddleName" /><br />
+
+    <label>Last Name:</label>
+    <input asp-for="LastName" /><br />
+    <span asp-validation-for="LastName" class="text-danger"></span><br />
+
+    <label>Manager Name:</label>
+    <input asp-for="ManagerName" /><br />
+    <span asp-validation-for="ManagerName" class="text-danger"></span><br />
+
+    <label>Date:</label>
+    <input asp-for="Date" type="date" /><br />
+    <span asp-validation-for="Date" class="text-danger"></span><br />
+
+    <label>Message:</label>
+    <textarea asp-for="Message"></textarea><br />
+
+    <input type="submit" value="Submit" />
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
